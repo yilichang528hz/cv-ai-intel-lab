@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCO Simulator | Commercial Vehicle Intelligence Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="theme-a">
+  <header class="sub-hero">
+    <div class="wrap sub-hero-inner">
+      <a class="back-link" href="index.html">← Home</a>
+      <p class="eyebrow">Decision Tool</p>
+      <h1 id="pageTitle">商用車 TCO 決策試算器</h1>
+      <p id="pageIntro" class="intro">比較柴油、電動與氫能商用車的五年總持有成本。</p>
+      <p class="copyright">著作權所有 © 2026 張義豊 (Yi-Li Chang) 保留所有權利</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="tco-layout">
+        <form id="tcoForm" class="tco-form">
+          <label><span id="labelYears">使用年限</span><input name="years" type="number" value="5" min="1" max="15"></label>
+          <label><span id="labelKm">每年里程 km</span><input name="km" type="number" value="50000" min="1000" step="1000"></label>
+          <label><span id="labelDieselPrice">柴油單價 / L</span><input name="dieselPrice" type="number" value="32" min="1" step="0.1"></label>
+          <label><span id="labelElectricity">電價 / kWh</span><input name="electricity" type="number" value="5" min="0.1" step="0.1"></label>
+          <label><span id="labelHydrogen">氫價 / kg</span><input name="hydrogen" type="number" value="250" min="1" step="1"></label>
+          <label><span id="labelSubsidy">新能源補助</span><input name="subsidy" type="number" value="300000" min="0" step="10000"></label>
+        </form>
+
+        <div class="tco-results">
+          <div id="resultCards" class="deliverable-grid"></div>
+          <svg viewBox="0 0 900 360" class="tco-chart" aria-label="TCO chart">
+            <line x1="80" y1="300" x2="830" y2="300"></line>
+            <rect id="barDiesel" x="140" y="100" width="120" height="200" rx="14"></rect>
+            <rect id="barEv" x="390" y="100" width="120" height="200" rx="14"></rect>
+            <rect id="barHydrogen" x="640" y="100" width="120" height="200" rx="14"></rect>
+            <text x="150" y="335">Diesel</text>
+            <text x="425" y="335">EV</text>
+            <text x="650" y="335">Hydrogen</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Assumptions</p>
+          <h2 id="assumptionTitle">試算邏輯</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <article><h3>Diesel</h3><p id="dieselLogic"></p></article>
+        <article><h3>EV</h3><p id="evLogic"></p></article>
+        <article><h3>Hydrogen</h3><p id="h2Logic"></p></article>
+        <article><h3 id="noteTitle">注意</h3><p id="noteText"></p></article>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-controls">
+    <button id="langBtn" title="lang">ZH</button>
+    <button id="themeBtn" title="theme">A</button>
+    <button id="topBtn" title="top">↑</button>
+  </div>
+
+  <script src="tco.js"></script>
+</body>
+</html>

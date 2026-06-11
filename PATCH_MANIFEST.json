@@ -1,0 +1,22 @@
+{
+  "copyMode": "cumulative_merge_then_overwrite_checked",
+  "files": [
+    "index.html",
+    "style.css",
+    "app.js",
+    "data.js",
+    "module-detail.html",
+    "module-detail.js",
+    "tco-simulator.html",
+    "tco.js",
+    "README.md",
+    "moduleRegistry.json",
+    "project_state.json",
+    "PATCH_MANIFEST.json",
+    "prompts/homepage-hero-prompt.txt",
+    "assets/images/home-hero-placeholder.jpg"
+  ],
+  "batch": "07",
+  "hotfix": "homepage_overlay_hidden_attribute_fix",
+  "version": "batch07_motivation_nav"
+}

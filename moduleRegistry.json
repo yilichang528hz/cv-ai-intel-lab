@@ -1,0 +1,27 @@
+{
+  "modules": [
+    "hero",
+    "sourceDirectory",
+    "workflowVisualization",
+    "applicationModules",
+    "floatingControls",
+    "trilingualI18n",
+    "themeSwitcher",
+    "categoryOverview",
+    "deliverables",
+    "glossaryModal",
+    "businessModules",
+    "agentRoles",
+    "sourceRubric",
+    "analysisCanvas",
+    "playbooks",
+    "strategyDashboard",
+    "moduleDetailPage",
+    "tcoSimulator",
+    "caseStudies",
+    "decisionTools",
+    "motivationSection",
+    "motivationNavLinks"
+  ],
+  "copyMode": "cumulative_merge_then_overwrite_checked"
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module Detail | Commercial Vehicle Intelligence Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="theme-a">
+  <header class="sub-hero">
+    <div class="wrap sub-hero-inner">
+      <a class="back-link" href="index.html">← Home</a>
+      <p class="eyebrow">Module Detail</p>
+      <h1 id="detailTitle">Module Detail</h1>
+      <p id="detailGoal" class="intro"></p>
+      <p class="copyright">著作權所有 © 2026 張義豊 (Yi-Li Chang) 保留所有權利</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="detail-layout">
+        <article class="detail-card">
+          <h2 id="inputsTitle">Inputs</h2>
+          <div id="detailInputs" class="mini-tags"></div>
+        </article>
+        <article class="detail-card">
+          <h2 id="outputsTitle">Outputs</h2>
+          <ul id="detailOutputs"></ul>
+        </article>
+        <article class="detail-card">
+          <h2>KPI</h2>
+          <p id="detailKpi"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Related Cases</p>
+          <h2 id="casesTitle">情境式商品企劃案例</h2>
+        </div>
+      </div>
+      <div id="relatedCases" class="case-grid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Navigation</p>
+          <h2 id="allModulesTitle">全部業務模組</h2>
+        </div>
+      </div>
+      <div id="moduleList" class="source-grid"></div>
+    </section>
+  </main>
+
+  <div class="floating-controls">
+    <button id="langBtn" title="lang">ZH</button>
+    <button id="themeBtn" title="theme">A</button>
+    <button id="topBtn" title="top">↑</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="module-detail.js"></script>
+</body>
+</html>

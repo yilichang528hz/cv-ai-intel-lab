@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commercial Vehicle Intelligence Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="theme-a">
+  <header class="hero" id="top">
+    <div class="hero-bg">
+      <svg viewBox="0 0 1400 780" class="hero-svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.36)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+        </defs>
+        <circle cx="180" cy="130" r="94" class="orb orb1"></circle>
+        <circle cx="1160" cy="160" r="140" class="orb orb2"></circle>
+        <circle cx="1020" cy="590" r="190" class="orb orb3"></circle>
+        <path d="M70,510 C220,390 360,610 540,490 S920,330 1230,500" class="flow-line"></path>
+        <path d="M110,580 C250,470 470,650 680,560 S1020,430 1280,560" class="flow-line flow-line-2"></path>
+        <g class="mini-grid">
+          <rect x="920" y="94" width="220" height="120" rx="18"></rect>
+          <line x1="950" y1="180" x2="1110" y2="180"></line>
+          <line x1="950" y1="160" x2="1050" y2="160"></line>
+          <line x1="950" y1="140" x2="1080" y2="140"></line>
+        </g>
+      </svg>
+    </div>
+    <div class="hero-content wrap">
+      <div class="hero-copy">
+        <h1 data-i18n="siteTitle"></h1>
+        <p class="intro" data-i18n="intro"></p>
+        <div class="hero-actions">
+          <a href="#sources" class="btn primary" data-lang-text="browseSources">瀏覽來源</a>
+          <a href="#workflow" class="btn ghost" data-lang-text="viewWorkflow">查看 AI 工作流</a>
+        </div>
+        <div class="hero-stats" id="heroStats"></div>
+        <p class="copyright" data-i18n-copyright></p>
+      </div>
+      <figure class="hero-image-card">
+        <div class="image-meta">
+        </div>
+        <img src="assets/images/home-hero-placeholder.jpg" alt="Homepage illustration placeholder" />
+              </figure>
+    </div>
+  </header>
+
+  <nav class="toc wrap" aria-label="table of contents">
+    <a href="#motivation" data-lang-text="navMotivation">創作動機</a>
+    <a href="#sources" data-lang-text="navSources">資料來源</a>
+    <a href="#workflow" data-lang-text="navWorkflow">AI 工作流</a>
+    <a href="#deliverables" data-lang-text="navDeliverables">AI 產出</a>
+    <a href="#agents" data-lang-text="navAgents">AI Agent</a>
+    <a href="#rubric" data-lang-text="navRubric">可信度分級</a>
+    <a href="#canvas" data-lang-text="navCanvas">分析畫布</a>
+    <a href="#tools" data-lang-text="navTools">決策工具</a>
+    <a href="#cases" data-lang-text="navCases">企劃案例</a>
+    <a href="#playbooks" data-lang-text="navPlaybooks">Playbooks</a>
+    <a href="#business" data-lang-text="navBusiness">業務深化</a>
+    <a href="#domains" data-lang-text="navDomains">業務應用</a>
+    <a href="#glossary" data-lang-text="navGlossary">術語表</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="panel motivation-panel" id="motivation">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Motivation</p>
+          <h2 data-lang-text="motivationTitle">創作動機</h2>
+        </div>
+      </div>
+      <article class="motivation-card">
+        <p data-i18n="motivationText"></p>
+      </article>
+    </section>
+
+    <section class="panel" id="sources">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Directory</p>
+          <h2 data-lang-text="sourcesTitle">商用車資料來源分類</h2>
+        </div>
+        <div class="filters">
+          <select id="categoryFilter"></select>
+          <input id="searchInput" type="search" placeholder="Search source" />
+        </div>
+      </div>
+      <div id="categoryOverview" class="overview-grid"></div>
+      <div id="categoryChips" class="chips"></div>
+      <div id="sourceStats" class="stats"></div>
+      <div id="sourceGrid" class="source-grid"></div>
+    </section>
+
+    <section class="panel" id="workflow">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Workflow</p>
+          <h2 data-lang-text="workflowTitle">商用車情報 × AI 工作流</h2>
+        </div>
+      </div>
+      <div class="workflow-layout">
+        <div class="workflow-visual">
+          <svg viewBox="0 0 900 620" class="workflow-svg" aria-hidden="true">
+            <path class="workflow-path" d="M110,70 C240,70 240,150 370,150 S500,230 630,230 S760,310 630,390 S500,470 370,470 S240,550 110,550"></path>
+            <circle data-step="0" cx="110" cy="70" r="28"></circle>
+            <circle data-step="1" cx="370" cy="150" r="28"></circle>
+            <circle data-step="2" cx="630" cy="230" r="28"></circle>
+            <circle data-step="3" cx="630" cy="390" r="28"></circle>
+            <circle data-step="4" cx="370" cy="470" r="28"></circle>
+            <circle data-step="5" cx="110" cy="550" r="28"></circle>
+            <text x="70" y="75">Scan</text>
+            <text x="330" y="155">Extract</text>
+            <text x="585" y="235">Analyze</text>
+            <text x="595" y="395">Plan</text>
+            <text x="320" y="475">Decide</text>
+            <text x="72" y="555">Publish</text>
+          </svg>
+        </div>
+        <div id="workflowCards" class="workflow-cards"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="deliverables">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Outputs</p>
+          <h2 data-lang-text="deliverablesTitle">AI 產出與交付物</h2>
+        </div>
+      </div>
+      <div id="deliverableGrid" class="deliverable-grid"></div>
+    </section>
+
+    <section class="panel" id="agents">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Agent System</p>
+          <h2 data-lang-text="agentsTitle">AI Agent 分工架構</h2>
+        </div>
+      </div>
+      <div class="agent-stage">
+        <svg viewBox="0 0 1100 420" class="agent-svg" aria-hidden="true">
+          <defs>
+            <filter id="softGlow">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <path class="agent-ring" d="M120,220 C230,70 420,70 550,210 C680,350 870,350 980,200"></path>
+          <circle cx="120" cy="220" r="38"></circle>
+          <circle cx="270" cy="125" r="38"></circle>
+          <circle cx="430" cy="120" r="38"></circle>
+          <circle cx="550" cy="210" r="38"></circle>
+          <circle cx="680" cy="300" r="38"></circle>
+          <circle cx="840" cy="295" r="38"></circle>
+          <circle cx="980" cy="200" r="38"></circle>
+        </svg>
+      </div>
+      <div id="agentGrid" class="agent-grid"></div>
+    </section>
+
+    <section class="panel" id="rubric">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Evidence Governance</p>
+          <h2 data-lang-text="rubricTitle">資料來源可信度分級</h2>
+        </div>
+      </div>
+      <div id="rubricGrid" class="rubric-grid"></div>
+    </section>
+
+    <section class="panel" id="canvas">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Analysis Canvas</p>
+          <h2 data-lang-text="canvasTitle">互動式商業分析畫布</h2>
+        </div>
+      </div>
+      <div class="canvas-stage">
+        <div class="canvas-dashboard">
+          <svg viewBox="0 0 1200 620" class="canvas-svg" aria-hidden="true">
+            <rect x="50" y="60" width="1100" height="500" rx="28"></rect>
+            <path d="M120,470 C230,380 300,410 390,310 S560,200 700,260 S900,370 1060,160" class="trend-line"></path>
+            <circle cx="390" cy="310" r="10"></circle>
+            <circle cx="700" cy="260" r="10"></circle>
+            <circle cx="1060" cy="160" r="10"></circle>
+            <g class="bar-stack">
+              <rect x="150" y="360" width="70" height="120" rx="12"></rect>
+              <rect x="250" y="300" width="70" height="180" rx="12"></rect>
+              <rect x="350" y="250" width="70" height="230" rx="12"></rect>
+            </g>
+            <g class="donut" transform="translate(860 390)">
+              <circle r="92" class="ring-bg"></circle>
+              <circle r="92" class="ring-fg"></circle>
+              <circle r="52" class="ring-hole"></circle>
+            </g>
+          </svg>
+        </div>
+        <div id="canvasGrid" class="canvas-grid"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="tools">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Decision Tools</p>
+          <h2 data-lang-text="toolsTitle">商用車決策工具</h2>
+        </div>
+      </div>
+      <div class="tool-grid">
+        <article class="tool-card">
+          <span class="number-badge">Tool 01</span>
+          <h3 data-lang-text="tcoToolTitle">TCO 決策試算器</h3>
+          <p data-lang-text="tcoToolText">比較柴油、電動與氫能商用車的五年總持有成本。</p>
+          <a href="tco-simulator.html" class="btn primary" data-lang-text="openTool">開啟工具</a>
+        </article>
+        <article class="tool-card">
+          <span class="number-badge">Tool 02</span>
+          <h3 data-lang-text="moduleToolTitle">業務模組詳情頁</h3>
+          <p data-lang-text="moduleToolText">查看教育訓練、工程、維修、法規、行銷與財務等模組。</p>
+          <a href="module-detail.html" class="btn ghost" data-lang-text="openDetail">查看詳情</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="cases">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Scenario Cases</p>
+          <h2 data-lang-text="casesTitle">情境式商品企劃案例</h2>
+        </div>
+      </div>
+      <div id="caseGrid" class="case-grid"></div>
+    </section>
+
+    <section class="panel" id="playbooks">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Execution Playbooks</p>
+          <h2 data-lang-text="playbooksTitle">商用車業務 Playbooks</h2>
+        </div>
+      </div>
+      <div id="playbookGrid" class="playbook-grid"></div>
+    </section>
+
+    <section class="panel" id="business">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Business Transformation</p>
+          <h2 data-lang-text="businessTitle">商用車產品企劃業務深化流程</h2>
+        </div>
+      </div>
+      <div id="businessModuleGrid" class="business-module-grid"></div>
+    </section>
+
+    <section class="panel" id="domains">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Applications</p>
+          <h2 data-lang-text="domainsTitle">業務轉化模組</h2>
+        </div>
+      </div>
+      <div id="domainGrid" class="domain-grid"></div>
+    </section>
+
+    <section class="panel" id="glossary">
+      <div class="panel-head">
+        <div>
+          <p class="section-kicker">Glossary</p>
+          <h2 data-lang-text="glossaryTitle">商用車關鍵術語表</h2>
+        </div>
+      </div>
+      <div id="glossaryGrid" class="glossary-grid"></div>
+    </section>
+  </main>
+
+  <div class="floating-controls">
+    <button id="tocBtn" title="toc">☰</button>
+    <button id="langBtn" title="lang">ZH</button>
+    <button id="themeBtn" title="theme">A</button>
+    <button id="glossaryBtn" title="glossary">G</button>
+    <button id="topBtn" title="top">↑</button>
+  </div>
+
+  <div class="drawer" id="tocDrawer" hidden>
+    <div class="drawer-card">
+      <div class="drawer-head">
+        <strong data-lang-text="drawerTitle">快速導覽</strong>
+        <button id="closeDrawer">×</button>
+      </div>
+      <a href="#motivation" class="drawer-link" data-lang-text="navMotivation">創作動機</a>
+      <a href="#sources" class="drawer-link" data-lang-text="navSources">資料來源</a>
+      <a href="#workflow" class="drawer-link" data-lang-text="navWorkflow">AI 工作流</a>
+      <a href="#deliverables" class="drawer-link" data-lang-text="navDeliverables">AI 產出</a>
+      <a href="#agents" class="drawer-link" data-lang-text="navAgents">AI Agent</a>
+      <a href="#rubric" class="drawer-link" data-lang-text="navRubric">可信度分級</a>
+      <a href="#canvas" class="drawer-link" data-lang-text="navCanvas">分析畫布</a>
+      <a href="#tools" class="drawer-link" data-lang-text="navTools">決策工具</a>
+      <a href="#cases" class="drawer-link" data-lang-text="navCases">企劃案例</a>
+      <a href="#playbooks" class="drawer-link" data-lang-text="navPlaybooks">Playbooks</a>
+      <a href="#business" class="drawer-link" data-lang-text="navBusiness">業務深化</a>
+      <a href="#domains" class="drawer-link" data-lang-text="navDomains">業務應用</a>
+      <a href="#glossary" class="drawer-link" data-lang-text="navGlossary">術語表</a>
+    </div>
+  </div>
+
+  <div class="modal" id="glossaryModal" hidden>
+    <div class="modal-card">
+      <div class="drawer-head">
+        <strong id="modalTerm">Term</strong>
+        <button id="closeModal">×</button>
+      </div>
+      <p id="modalDef"></p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
